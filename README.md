@@ -1,2 +1,2 @@
-# smCodeDemo
-小程序练习
+# Code Demo
+各种练习
