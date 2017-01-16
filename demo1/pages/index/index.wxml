@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view class="container">
+  <!--<view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>-->
+  
+</view>
+<view>
+  <loading hidden="{{loadingHidden}}">
+    加载中...
+  </loading>
+  <button type="default" bindtap="loadingTap">点击弹出loading</button>
+</view>
+<view>
+  <view class="view" style="font-size:{{fontSize}}pt">我是view标签</view>
+  <button class="btn" type="default" bindtap="magnifyFontSize">点击我字体变大</button>
+  <button class="btn" type="default" bindtap="shrinkFontSize">点击我字体变小</button>
+</view>
+<navigator url="../second/second">
+  <view>click to next page</view>
+<navigator/>

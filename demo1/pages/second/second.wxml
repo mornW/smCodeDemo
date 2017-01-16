@@ -1,0 +1,12 @@
+<view style="width:80%;display:flex;">
+    <view>用户名：</view>
+    <input style="border: 1px solid;border-color: lightblue;width:60%;" type="text" focuse="false" maxlength="12" placeholder="请输入用户名"></input>
+</view>
+<view style="width:80%;display:flex;">
+    密码：
+    <input style="border: 1px solid;border-color: lightblue;width:60%;" type="text" password="true" focuse="false" maxlength="12" placeholder="请输入密码"></input>
+</view>
+
+<progress percent="100" color="#09BB07" show-info="true" stroke-width="6" active="true"/>
+
+<button bindtap="toList">去看看列表<button/>

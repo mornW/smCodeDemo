@@ -1,0 +1,47 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/second/second",
+    "pages/listView/list",
+    "pages/ucenter/ucenter"
+  ],
+  "window":{
+    "navigationBarTitleText": "TabBar",
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+      "color": "#ccc",
+      "selectedColor": "#26c6da",
+      "backgroundColor": "#fff",
+      "borderStyle":"#ccc",
+      "list":[{
+            "pagePath":"pages/index/index",
+            "iconPath":"pages/images/index.png",
+            "selectedIconPath":"pages/images/index2.png",
+            "text":"index"
+        },
+        {
+            "pagePath":"pages/listView/list",
+            "iconPath":"pages/images/list.png",
+            "selectedIconPath":"pages/images/list2.png",
+            "text":"detail"
+        },
+        {
+            "pagePath":"pages/second/second",
+            "iconPath":"pages/images/search.png",
+            "selectedIconPath":"pages/images/search2.png",
+            "text":"detail"
+        },
+        {
+            "pagePath":"pages/ucenter/ucenter",
+            "iconPath":"pages/images/set.png",
+            "selectedIconPath":"pages/images/set2.png",
+            "text":"detail"
+        }
+      ]
+    }
+}
