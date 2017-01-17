@@ -1,0 +1,191 @@
+body{
+	font-family: "微软雅黑",helvetica;
+	font-size: 14px;
+}
+.wrap {
+    background-color: #fff;
+    margin-top: 10px;
+}
+.form {
+    /*border: 1px solid;*/
+    /*width: 80%;*/
+    padding-top: 15px;
+    width: 100%;
+    margin: 0 auto;
+}
+.dib-mid,.items .item-title,.items .item-group,.box-title,.box-val,.item-group .box {
+    display: inline-block;
+    vertical-align: middle;
+}
+.desc .item-title,.desc .item-group {
+    display: inline-block;
+    vertical-align: top!important;
+}
+.items {
+    margin-bottom: 15px;
+}
+.items .item-title {
+    text-align: right;
+    width: 15%;
+    margin-right: 15px;
+    color: #333;
+}
+.radios-bg {
+    background: url(../image/radio@1x.png) no-repeat 0 0;
+    background-size: 34px;
+    overflow: hidden;
+    width: 11px;
+    height: 12px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0px;
+    margin-top: 1px;
+}
+.radios-bg-selected {
+    background: url(../image/radio@1x.png) no-repeat -12px 0!important;
+    background-size: 34px!important;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0px;
+}
+.item-group .box-val {
+    width: 55%;
+}
+.item-group .box {
+    /*border: 1px solid;*/
+    width: 34%;
+}
+.item-group .box:first-child {
+    width: 25%;
+}
+.item-group .box:nth-child(2) {
+   margin: 0 10px;
+}
+.box input,.item-group input {
+    border: 1px solid #adadad;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    background-color: transparent;
+    height: 20px;
+    padding-left: 5px;
+    width: 92%;
+}
+input[type="radio"]:checked+div {
+    background: url(../image/radio@1x.png) no-repeat -12px 0!important;
+    background-size: 34px!important;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0px;
+}
+.item-group input.line-val {
+    width: 96%;
+}
+.item-group textarea {
+    border: 1px solid #adadad;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    background-color: transparent;
+    width: 95%;
+    padding: 5px;
+}
+.item-group label {
+    /*margin-right: 10px;*/
+    /*width: 11%*/
+    width: 16%;
+}
+.box-val label {
+    width: 30%;
+    margin-right: 15px;
+}
+.box-val label:last-child {
+    margin-right: 0;
+}
+.more-option label {
+    width: 21%;
+}
+.item-group label:last-child {
+    margin-right: 0;
+}
+.ills .item-group {
+    /*height: 22px;*/
+}
+.item-group .box-title {
+    margin-right: 10px;
+}
+.item-group .box:first-child input {
+    width: 66%;
+}
+.item-group .box:nth-child(2) .box-title {
+    text-align: left;
+    width: 30%;
+}
+.item-group .box:nth-child(2) .lg-val {
+    width: 61%!important;
+}
+.item-group .box:nth-child(3) .box-title {
+    text-align: left;
+    width: 23%;
+}
+.item-group .box:nth-child(3) .lg-val {
+    width: 68%!important;
+}
+.default-pat img {
+    width: 17px;
+}
+.require {
+    font-size: 16px;
+    color: #ff3300;
+    position: relative;
+    top: 2px;
+}
+.sp {
+    left: -25px;
+    top: 5px;
+}
+.default-option {
+    margin-bottom: 10px;
+}
+/*提交按钮组*/
+.btn-group {
+    margin: 0 auto;
+    text-align: center;
+    padding: 0px 20px 15px;
+}
+.btn-group .submit{
+    margin-right: 78px;
+}
+.btn-group .cancel,
+.btn-group .submit {
+    background-color: #e4e4e4;
+    font-size: 12px;
+    color: #333;
+    padding: 5px 16px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+}
+.btn-group img:nth-child(1) {
+    margin-top: -2px;
+    margin-right: 4px;
+    width: 14px;
+}
+.btn-group img:nth-child(2) {
+    margin-top: -3px;
+    margin-right: 4px;
+    width: 13px;
+    height: 15px;
+}
+/*一代板*/
+@media only screen
+and (min-device-width : 854px)
+and (-webkit-min-device-pixel-ratio: 1.5) {
+    .items .item-title{
+        font-size: 15px;
+    }
+    .items .item-group {
+        font-size: 14px;
+        width: 82%;
+    }
+}

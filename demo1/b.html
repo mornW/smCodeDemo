@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>demo b</title>
+</head>
+<body>
+<div id="watch-1">
+{{myData}}
+<input type="text" v-model="myData">
+</div>
+<script type="text/javascript" src="../lib/js/vue-1.0.26.js"></script>
+<script type="text/javascript">
+var MyComponent = Vue.extend({
+  // 扩展选项
+})
+// 所有的 `MyComponent` 实例都将以预定义的扩展选项被创建
+var myComponentInstance = new MyComponent()
+
+var myData = {title:'hello'};
+var myWatch = new Vue({
+    el: '#watch-1',
+    data: myData
+});
+// myWatch.$el = myData;
+// myWatch.$d
+ myWatch.$watch(function(newVal, oldVal){
+    console.log(newVal+'--'+oldVal);
+ });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+[
+    {
+        "itemcode":"10",
+        "itemname":"明确病因"
+    },
+    {
+        "itemcode":"20",
+        "itemname":"明确诊断"
+    },
+    {
+        "itemcode":"30",
+        "itemname":"治疗方案"
+    },
+    {
+        "itemcode":"40",
+        "itemname":"手术方案"
+    },
+    {
+        "itemcode":"50",
+        "itemname":"预后情况"
+    },
+    {
+        "itemcode":"60",
+        "itemname":"其他"
+    }
+]

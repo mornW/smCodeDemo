@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no,email=no" />
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <meta name="304Fix" content="safari-fix">
+    <meta name="fragment" content="!" />
+    <link rel='shortcut icon' type="image/x-icon" href=''/>
+    <link rel='bookmark' type="image/x-icon" href='' />
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/mobiscroll.custom-3.0.0-beta6.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/add.css">
+    <title>新建</title>
+</head>
+<body>
+    <div class="wrap" id="add-app">
+        <div class="header">
+            <div class="steps">
+                <ol>
+                    <li>
+                        <div class="no">1</div>
+                        <img src="../../../assets/images/consultation/n_step_radio.png">
+                        <div class="name">患者基本信息</div>
+                    </li>
+                    <li>
+                        <div class="no">2</div>
+                        <img src="../../../assets/images/consultation/n_step_line.png">
+                        <img src="../../../assets/images/consultation/n_step_line2.png">
+                        <div class="name">医保情况</div>
+                    </li>
+                    <li>
+                        <div class="no">3</div>
+                        <img src="../../../assets/images/consultation/n_step_line.png">
+                        <img src="../../../assets/images/consultation/n_step_line2.png">
+                        <div class="name">病情情况</div>
+                    </li>
+                    <li>
+                        <div class="no">4</div>
+                        <img src="../../../assets/images/consultation/n_step_line.png">
+                        <img src="../../../assets/images/consultation/n_step_line2.png">
+                        <div class="name">检查治疗</div>
+                    </li>
+                    <li>
+                        <div class="no">5</div>
+                        <img src="../../../assets/images/consultation/n_step_line.png">
+                        <img src="../../../assets/images/consultation/n_step_line2.png">
+                        <div class="name">会诊目的及方式</div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="content">
+            <!-- 第一步 -->
+            <div class="step step-page1">
+                <div class="form-group clearfix">
+                    <div class="group">
+                        <div class="dib">姓名</div>
+                        <div class="dib">
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="group clearfix middle-group">
+                        <div class="dib">性别</div>
+                        <div class="dib">
+                            <label>
+                                <div class="radios-bg"></div>
+                                <input type="radio" hidden="hidden" data-value="0">
+                                男
+                            </label>
+                            <label>
+                                <div class="radios-bg"></div>
+                                <input type="radio" hidden="hidden" data-value="1">
+                                女
+                            </label>
+                        </div>
+                    </div>
+                    <div class="group fr middle-group">
+                        <div class="dib">年龄</div>
+                        <div class="dib">
+                            <input type="number" id="age">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="dib">出生日期</div>
+                    <div class="dib">
+                        <input id="birth" readonly>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="dib">民族</div>
+                    <div class="dib col-2 nation">
+                        <div class="diy_select">
+                            <div class="select-text ">
+                                <input type="hidden" name="" id="a" class="diy_select_input"/>
+                                <div class="diy_select_txt diy_select_btn"></div>
+                            </div>
+                            <div class="select-option">
+                                <ul class="diy_select_list nation-list">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="dib">婚姻状态</div>
+                    <div class="dib col-1 marriage">
+                        <div class="diy_select">
+                            <div class="select-text ">
+                                <input type="hidden" name="" id="a" class="diy_select_input"/>
+                                <div class="diy_select_txt diy_select_btn"></div>
+                            </div>
+                            <div class="select-option">
+                                <ul class="diy_select_list marriage-list"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="dib">省市区</div>
+                    <div class="dib clearfix col-7 area">
+                        <div class="fl col-2">
+                            <div class="diy_select">
+                                <div class="select-text ">
+                                    <input type="hidden" name="" id="a" class="diy_select_input"/>
+                                    <div class="diy_select_txt diy_select_btn"></div>
+                                </div>
+                                <div class="select-option">
+                                    <ul class="diy_select_list prov-list">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fl mr4">省</div>
+                        <div class="fl col-2">
+                            <div class="diy_select">
+                                <div class="select-text ">
+                                    <input type="hidden" name="" id="a" class="diy_select_input"/>
+                                    <div class="diy_select_txt diy_select_btn"></div>
+                                </div>
+                                <div class="select-option">
+                                    <ul class="diy_select_list city-list">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fl mr4">市</div>
+                        <div class="fl col-2">
+                            <div class="diy_select">
+                                <div class="select-text ">
+                                    <input type="hidden" name="" id="a" class="diy_select_input"/>
+                                    <div class="diy_select_txt diy_select_btn"></div>
+                                </div>
+                                <div class="select-option">
+                                    <ul class="diy_select_list area-list">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fl mr4">区</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="dib">住址</div>
+                    <div class="dib col-8">
+                        <input type="text" class="col-10">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="dib">职业</div>
+                    <div class="dib col-2 job">
+                        <div class="diy_select">
+                            <div class="select-text ">
+                                <input type="hidden" name="" id="a" class="diy_select_input"/>
+                                <div class="diy_select_txt diy_select_btn"></div>
+                            </div>
+                            <div class="select-option">
+                                <ul class="diy_select_list jobs">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="dib">工作单位</div>
+                    <div class="dib col-8">
+                        <input type="text" class="job-addr col-10">
+                    </div>
+                </div>
+            </div>
+            <!-- 第二步 -->
+            <div class="step step-page2 dn">
+                <div class="form-group">
+                    <div class="dib">付费属性</div>
+                    <div class="dib col-3">
+                        <div class="diy_select">
+                            <div class="select-text ">
+                                <input type="hidden" name="" id="a" class="diy_select_input"/>
+                                <div class="diy_select_txt diy_select_btn"></div>
+                            </div>
+                            <div class="select-option">
+                                <ul class="diy_select_list pay-list"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="dib">社会保障号</div>
+                    <div class="dib">
+                        <input type="text" >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="dib">医疗保险号</div>
+                    <div class="dib">
+                        <input type="text" >
+                    </div>
+                </div>
+            </div>
+            <!-- 第三步 -->
+            <div class="step step-page3 dn">
+                <div class="form-group">
+                    <div class="dib">病情情况</div>
+                    <div class="dib col-3">
+                        <div class="diy_select">
+                            <div class="select-text ">
+                                <input type="hidden" name="" id="a" class="diy_select_input"/>
+                                <div class="diy_select_txt diy_select_btn"></div>
+                            </div>
+                            <div class="select-option">
+                                <ul class="diy_select_list illness"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group txt-area">
+                    <div class="dib">临床诊断</div>
+                    <div class="dib col-8">
+                        <textarea type="text"></textarea>
+                    </div>
+                </div>
+                <div class="form-group txt-area">
+                    <div class="dib">主诉</div>
+                    <div class="dib col-8">
+                        <textarea type="text"></textarea>
+                    </div>
+                </div>
+                <div class="form-group txt-area">
+                    <div class="dib">现病史</div>
+                    <div class="dib col-8">
+                        <textarea type="text"></textarea>
+                    </div>
+                </div>
+                <div class="form-group txt-area">
+                    <div class="dib">既往史</div>
+                    <div class="dib col-8">
+                        <textarea type="text"></textarea>
+                    </div>
+                </div>
+                <div class="form-group txt-area">
+                    <div class="dib">家族史</div>
+                    <div class="dib col-8">
+                        <textarea type="text"></textarea>
+                    </div>
+                </div>
+            </div>
+            <!-- 第四步 -->
+            <div class="step step-page4 dn">
+                <div class="form-group txt-area">
+                    <div class="dib">体格检查</div>
+                    <div class="dib col-8">
+                        <textarea type="text"></textarea>
+                    </div>
+                </div>
+                <div class="form-group txt-area">
+                    <div class="dib">辅助检查</div>
+                    <div class="dib col-8">
+                        <textarea type="text"></textarea>
+                    </div>
+                </div>
+                <div class="form-group txt-area">
+                    <div class="dib">当前治疗</div>
+                    <div class="dib col-8">
+                        <textarea type="text"></textarea>
+                    </div>
+                </div>
+                <div class="form-group txt-area">
+                    <div class="dib">其他说明</div>
+                    <div class="dib col-8 pr">
+                        <textarea type="text"></textarea>
+                        <div class="imgs">
+                            <div class="imgs-bg"></div>
+                        </div>
+                        <div class="video">
+                            <div class="video-bg"></div>
+                        </div>
+                        <div class="files">
+                            <div class="file-bg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 第五步 -->
+            <div class="step step-page5 dn">
+                <div class="form-group">
+                    <div class="dib">会诊目的</div>
+                    <div class="dib col-2 cc1">
+                        <div class="diy_select aims-select">
+                            <div class="select-text ">
+                                <input type="hidden" name="" id="a" class="diy_select_input"/>
+                                <div class="diy_select_txt diy_select_btn"></div>
+                            </div>
+                            <div class="select-option">
+                                <ul class="diy_select_list aims"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="dib">会诊方式</div>
+                    <div class="dib col-2 cc2">
+                        <div class="diy_select mode-select">
+                            <div class="select-text">
+                                <input type="hidden" name="" id="a" class="diy_select_input"/>
+                                <div class="diy_select_txt diy_select_btn"></div>
+                            </div>
+                            <div class="select-option">
+                                <ul class="diy_select_list mode"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="dib">会诊选择</div>
+                    <div class="dib col-7 choice clearfix">
+                        <div class="fl cc3">
+                            <div class="diy_select hospital-select">
+                                <div class="select-text ">
+                                    <input type="hidden" name="" id="a" class="diy_select_input"/>
+                                    <div class="diy_select_txt diy_select_btn"></div>
+                                </div>
+                                <div class="select-option">
+                                    <ul class="diy_select_list to-hospital">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fl hosptail-bg"></div>
+                        <div class="fl cc2">
+                            <div class="diy_select">
+                                <div class="select-text ">
+                                    <input type="hidden" name="" id="a" class="diy_select_input"/>
+                                    <div class="diy_select_txt diy_select_btn"></div>
+                                </div>
+                                <div class="select-option">
+                                    <ul class="diy_select_list to-dept">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fl dept-bg"></div>
+                        <div class="fl">
+                            <div class="diy_select">
+                                <div class="select-text doctor-select">
+                                    <input type="hidden" name="" id="a" class="diy_select_input"/>
+                                    <div class="diy_select_txt diy_select_btn"></div>
+                                </div>
+                                <div class="select-option">
+                                    <ul class="diy_select_list to-doctor">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fl doctor-bg">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="dib">拟预约时间日期</div>
+                    <div class="dib col-2">
+                        <input id="book-date" class="col-10" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="group">
+            <div class="prev-btn"><img src="../../../assets/images/consultation/n_prev.png">上一步</div>
+            <div class="next-btn dib" next-page="1"><img src="../../../assets/images/consultation/n_next.png">下一步</div>
+            <div class="submit-btn"><img src="../../../assets/images/consultation/n_save.png">保存提交</div>
+        </div>
+    </div>
+    <div class="mask dn">
+        <div class="tip dn">提交失败!</div>
+        <div class="errors dn">
+            <div class="errors-header">错误提示</div>
+            <ul id="error-tip"></ul>
+            <div class="close">确定</div>
+        </div>
+    </div>
+<script type="text/javascript" src="../../../assets/js/vue.1.js"></script>
+<script type="text/javascript" src="../../../assets/js/vue-resource.1.0.3.js" ></script>
+<script type="text/javascript" src="../../../assets/lib/mobiscroll.custom-3.0.0-beta6.min.js"></script>
+<!--<script type="text/javascript" src="../../../lib/common.js"></script>-->
+<script type="text/javascript" src="../../../assets/lib/select.js"></script>
+<script type="text/javascript" src="js/add.js"></script>
+</body>
+</html>
