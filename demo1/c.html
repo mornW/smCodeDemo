@@ -20,12 +20,13 @@
 		<link rel="stylesheet" href="c.css"/>
 	</head>
 	<body>
-		<div id="app">{{$data|json}}
+		<div id="app" v-cloak>
+		<!-- {{$data|json}} -->
 			<div class="items">
 	            <div class="item-title">姓名</div>
 	            <div class="item-group">
 	                <div class="box">
-	                    <input type="text" class="val" v-model="username" lazy>
+	                    <input type="text" class="val" v-model="pmUser.username" lazy>
 	                    <div class="require dib-mid">*</div>
 	                    <div class="dib-mid default-pat">
 	                        <!-- <img src="../../img/emergency/default@2x.png"> -->
@@ -35,12 +36,12 @@
 	                    <div class="box-title">性别</div>
 	                    <div class="box-val sex">
 	                        <label class="dib-mid zzradio">
-	                            <input type="radio" name="cate" hidden="hidden" value="0" v-model="genter">
+	                            <input type="radio" name="cate" hidden="hidden" value="0" v-model="pmUser.genter">
 	                            <div class="radios-bg"></div>
 	                            男
 	                        </label>
 	                        <label class="dib-mid zzradio">
-	                            <input type="radio" name="cate" hidden="hidden" value="1" v-model="genter">
+	                            <input type="radio" name="cate" hidden="hidden" value="1" v-model="pmUser.genter">
 	                            <div class="radios-bg"></div>
 	                            女
 	                        </label>
@@ -50,7 +51,7 @@
 	                <div class="box">
 	                    <div class="box-title">年龄</div>
 	                    <div class="box-val">
-	                        <input type="number" class="val" v-model="age" lazy number>
+	                        <input type="number" class="val" v-model="pmUser.age" lazy number>
 	                    </div>
 	                    <div class="require dib-mid">*</div>
 	                </div>
@@ -60,19 +61,19 @@
 	            <div class="item-title">出生日期</div>
 	            <div class="item-group">
 	                <div class="box">
-	                    <input type="text" class="val" readonly v-model="dateofbirth" lazy>
+	                    <input type="text" class="val" readonly v-model="pmUser.dateofbirth" lazy>
 	                    <div class="require dib-mid">*</div>
 	                </div>
 	                <div class="box">
 	                    <div class="box-title">联系方式</div>
 	                    <div class="box-val lg-val">
-	                        <input type="number" v-model="mobile1" lazy number>
+	                        <input type="number" v-model="pmUser.mobile1" lazy number>
 	                    </div>
 	                </div>
 	                <div class="box">
 	                    <div class="box-title">身份证</div>
 	                    <div class="box-val lg-val">
-	                        <input type="number" v-model="idcard" lazy number>
+	                        <input type="number" v-model="pmUser.idcard" lazy number>
 	                    </div>
 	                </div>
 	            </div>
@@ -80,58 +81,58 @@
 	        <div class="items">
 	            <div class="item-title">住址</div>
 	            <div class="item-group">
-	                <input type="text" class="val line-val" v-model="address" lazy>
+	                <input type="text" class="val line-val" v-model="pmUser.address" lazy>
 	            </div>
 	        </div>
 	        <div class="items desc">
 	            <div class="item-title">接诊现场</div>
 	            <div class="item-group">
-	                <textarea class="val"></textarea>
+	                <textarea class="val" v-model="pmUser.admissionsScene" lazy></textarea>
 	            </div>
 	        </div>
 	        <div class="items desc">
 	            <div class="item-title">主诉</div>
 	            <div class="item-group">
-	                <textarea class="val" v-model="patientdescription" lazy></textarea>
+	                <textarea class="val" v-model="pmUser.patientdescription" lazy></textarea>
 	            </div>
 	        </div>
 	        <div class="items desc">
 	            <div class="item-title">现病史</div>
 	            <div class="item-group">
-	                <textarea v-model="medicalhistory" lazy></textarea>
+	                <textarea v-model="pmUser.medicalhistory" lazy></textarea>
 	            </div>
 	        </div>
 	        <div class="items desc">
 	            <div class="item-title">初步诊断</div>
 	            <div class="item-group">
-	                <textarea v-model="clinicaldiagnosis" lazy></textarea>
+	                <textarea v-model="pmUser.clinicaldiagnosis" lazy></textarea>
 	            </div>
 	        </div>
 			<div class="items">
 	            <div class="item-title">意识</div>
 	            <div class="item-group option-1">
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op1" value="10" hidden="hidden" v-model="consciousness">
+	                    <input type="radio" name="op1" value="10" hidden="hidden" v-model="pmUser.consciousness">
 	                    <div class="radios-bg"></div>
 	                    正常
 	                </label>
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op1" value="20" hidden="hidden" v-model="consciousness">
+	                    <input type="radio" name="op1" value="20" hidden="hidden" v-model="pmUser.consciousness">
 	                    <div class="radios-bg"></div>
 	                    模糊
 	                </label>
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op1" value="30" hidden="hidden" v-model="consciousness">
+	                    <input type="radio" name="op1" value="30" hidden="hidden" v-model="pmUser.consciousness">
 	                    <div class="radios-bg"></div>
 	                    瞻望
 	                </label>
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op1" value="40" hidden="hidden" v-model="consciousness">
+	                    <input type="radio" name="op1" value="40" hidden="hidden" v-model="pmUser.consciousness">
 	                    <div class="radios-bg"></div>
 	                    昏迷
 	                </label>
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op1" value="50" hidden="hidden" v-model="consciousness">
+	                    <input type="radio" name="op1" value="50" hidden="hidden" v-model="pmUser.consciousness">
 	                    <div class="radios-bg"></div>
 	                    丧失
 	                </label>
@@ -141,22 +142,22 @@
 	            <div class="item-title">瞳孔</div>
 	            <div class="item-group option-2">
 	            	<label class="dib-mid zzradio">
-	                    <input type="radio" name="op2" value="10" hidden="hidden" v-model="pupil">
+	                    <input type="radio" name="op2" value="10" hidden="hidden" v-model="pmUser.pupil">
 	                    <div class="radios-bg"></div>
 	                    正常
 	                </label>
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op2" value="20" hidden="hidden" v-model="pupil">
+	                    <input type="radio" name="op2" value="20" hidden="hidden" v-model="pmUser.pupil">
 	                    <div class="radios-bg"></div>
 	                    扩大
 	                </label>
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op2" value="30" hidden="hidden" v-model="pupil">
+	                    <input type="radio" name="op2" value="30" hidden="hidden" v-model="pmUser.pupil">
 	                    <div class="radios-bg"></div>
 	                    缩小
 	                </label>
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op2" value="40" hidden="hidden" v-model="pupil">
+	                    <input type="radio" name="op2" value="40" hidden="hidden" v-model="pmUser.pupil">
 	                    <div class="radios-bg"></div>
 	                    不等
 	                </label>
@@ -166,15 +167,15 @@
 	            <div class="item-title">对光反射</div>
 	            <div class="item-group option-3">
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op3" value="10" hidden="hidden" v-model="lightReflection">
+	                    <input type="radio" name="op3" value="10" hidden="hidden" v-model="pmUser.lightReflection">
 	                    <div class="radios-bg"></div>正常
 	                </label>
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op3" value="20" hidden="hidden" v-model="lightReflection">
+	                    <input type="radio" name="op3" value="20" hidden="hidden" v-model="pmUser.lightReflection">
 	                    <div class="radios-bg"></div>迟钝
 	                </label>
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op3" value="30" hidden="hidden" v-model="lightReflection">
+	                    <input type="radio" name="op3" value="30" hidden="hidden" v-model="pmUser.lightReflection">
 	                    <div class="radios-bg"></div>消失
 	                </label>
 	            </div>
@@ -183,27 +184,27 @@
 	            <div class="item-title">皮肤</div>
 	            <div class="item-group option-4">
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op4" value="10" hidden="hidden" v-model="skin">
+	                    <input type="radio" name="op4" value="10" hidden="hidden" v-model="pmUser.skin">
 	                    <div class="radios-bg"></div>正常
 	                </label>
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op4" value="20" hidden="hidden" v-model="skin">
+	                    <input type="radio" name="op4" value="20" hidden="hidden" v-model="pmUser.skin">
 	                    <div class="radios-bg"></div>苍白
 	                </label>
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op4" value="30" hidden="hidden" v-model="skin">
+	                    <input type="radio" name="op4" value="30" hidden="hidden" v-model="pmUser.skin">
 	                    <div class="radios-bg"></div>发红
 	                </label>
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op4" value="40" hidden="hidden" v-model="skin">
+	                    <input type="radio" name="op4" value="40" hidden="hidden" v-model="pmUser.skin">
 	                    <div class="radios-bg"></div>黄染
 	                </label>
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op4" value="50" hidden="hidden" v-model="skin">
+	                    <input type="radio" name="op4" value="50" hidden="hidden" v-model="pmUser.skin">
 	                    <div class="radios-bg"></div>青紫
 	                </label>
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op4" value="60" hidden="hidden" v-model="skin">
+	                    <input type="radio" name="op4" value="60" hidden="hidden" v-model="pmUser.skin">
 	                    <div class="radios-bg"></div>温冷
 	                </label>
 	            </div>
@@ -212,19 +213,19 @@
 	            <div class="item-title">外部原因</div>
 	            <div class="item-group option-5">
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op5" value="10" hidden="hidden" v-model="externalCauses">
+	                    <input type="radio" name="op5" value="10" hidden="hidden" v-model="pmUser.externalCauses">
 	                    <div class="radios-bg"></div>中毒
 	                </label>
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op5" value="20" hidden="hidden" v-model="externalCauses">
+	                    <input type="radio" name="op5" value="20" hidden="hidden" v-model="pmUser.externalCauses">
 	                    <div class="radios-bg"></div>外伤
 	                </label>
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op5" value="30" hidden="hidden" v-model="externalCauses">
+	                    <input type="radio" name="op5" value="30" hidden="hidden" v-model="pmUser.externalCauses">
 	                    <div class="radios-bg"></div>车祸
 	                </label>
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op5" value="40" hidden="hidden" v-model="externalCauses">
+	                    <input type="radio" name="op5" value="40" hidden="hidden" v-model="pmUser.externalCauses">
 	                    <div class="radios-bg"></div>其他
 	                </label>
 	            </div>
@@ -234,33 +235,33 @@
 	            <div class="item-group">
 	                <div class="default-option option-6">
 	                    <label class="dib-mid zzradio">
-	                        <input type="radio" name="op6" value="10" hidden="hidden" v-model="prognosisOfHospital">
+	                        <input type="radio" name="op6" value="10" hidden="hidden" v-model="pmUser.prognosisOfHospital">
 	                    <div class="radios-bg"></div>好转
 	                    </label>
 	                    <label class="dib-mid zzradio">
-	                        <input type="radio" name="op6" value="20" hidden="hidden" v-model="prognosisOfHospital">
+	                        <input type="radio" name="op6" value="20" hidden="hidden" v-model="pmUser.prognosisOfHospital">
 	                    <div class="radios-bg"></div>无变化
 	                    </label>
 	                    <label class="dib-mid zzradio">
-	                        <input type="radio" name="op6" value="30" hidden="hidden" v-model="prognosisOfHospital">
+	                        <input type="radio" name="op6" value="30" hidden="hidden" v-model="pmUser.prognosisOfHospital">
 	                    <div class="radios-bg"></div>加重
 	                    </label>
 	                    <label class="dib-mid zzradio">
-	                        <input type="radio" name="op6" value="40" hidden="hidden" v-model="prognosisOfHospital">
+	                        <input type="radio" name="op6" value="40" hidden="hidden" v-model="pmUser.prognosisOfHospital">
 	                    <div class="radios-bg"></div>死亡
 	                    </label>
 	                </div>
 	                <div class="more-option dn option-7">
 	                    <label class="dib-mid zzradio">
-	                        <input type="radio" name="op7" value="50" hidden="hidden" v-model="prognosisOfHospital">
+	                        <input type="radio" name="op7" value="50" hidden="hidden" v-model="pmUser.prognosisOfHospital">
 	                    <div class="radios-bg"></div>到达时已死亡
 	                    </label>
 	                    <label class="dib-mid zzradio">
-	                        <input type="radio" name="op7" value="60" hidden="hidden" v-model="prognosisOfHospital">
+	                        <input type="radio" name="op7" value="60" hidden="hidden" v-model="pmUser.prognosisOfHospital">
 	                    <div class="radios-bg"></div>经现场急救无效
 	                    </label>
 	                    <label class="dib-mid zzradio">
-	                        <input type="radio" name="op7" value="70" hidden="hidden" v-model="prognosisOfHospital">
+	                        <input type="radio" name="op7" value="70" hidden="hidden" v-model="pmUser.prognosisOfHospital">
 	                    <div class="radios-bg"></div>途中死亡
 	                    </label>
 	                </div>
@@ -270,23 +271,23 @@
 	            <div class="item-title">出诊结果</div>
 	            <div class="item-group option-8">
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op8" value="10" hidden="hidden" v-model="visitsResults">
+	                    <input type="radio" name="op8" value="10" hidden="hidden" v-model="pmUser.visitsResults">
 	                    <div class="radios-bg"></div>拒绝治疗
 	                </label>
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op8" value="20" hidden="hidden" v-model="visitsResults">
+	                    <input type="radio" name="op8" value="20" hidden="hidden" v-model="pmUser.visitsResults">
 	                    <div class="radios-bg"></div>现场治疗
 	                </label>
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op8" value="30" hidden="hidden" v-model="visitsResults">
+	                    <input type="radio" name="op8" value="30" hidden="hidden" v-model="pmUser.visitsResults">
 	                    <div class="radios-bg"></div>送往医院
 	                </label>
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op8" value="40" hidden="hidden" v-model="visitsResults">
+	                    <input type="radio" name="op8" value="40" hidden="hidden" v-model="pmUser.visitsResults">
 	                    <div class="radios-bg"></div>拒绝送院
 	                </label>
 	                <label class="dib-mid zzradio">
-	                    <input type="radio" name="op8" value="50" hidden="hidden" v-model="visitsResults">
+	                    <input type="radio" name="op8" value="50" hidden="hidden" v-model="pmUser.visitsResults">
 	                    <div class="radios-bg"></div>转送上级医院
 	                </label>
 	            </div>
@@ -299,48 +300,9 @@
 	        <!--<div class="static" v-bind:class="{ 'class-a': isA, 'class-b': isB }"></div>-->
 		</div>
 		<script type="text/javascript" src="../lib/js/vue-1.0.26.js"></script>
-		<script src="http://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
-		<script>
-			//Clear Cache
-			//Responsive Web Design Tester   Chrome Sniffer Plus  Postman  Vue.js devtools
-
-			var app = new Vue({
-				el: '#app',
-				data: {
-					// classA: 'class-a',
-  			// 		classB: 'class-b',
-  			// 		isA: false,
-  			// 		isB: true,
-  					consciousness: '',
-  					pupil: '',
-  					lightReflection: '',
-  					skin: '',
-  					externalCauses: '',
-  					prognosisOfHospital: '',
-  					visitsResults: '',
-  					username:'',
-  					age: '',
-  					genter: '',
-  					dateofbirth: '',
-  					address:'',
-  					idcard: '',
-  					mobile1: '',
-  					admissionsScene: '',
-  					patientdescription: '',
-  					medicalhistory: '',
-  					clinicaldiagnosis: '',
-  					// jobs: [
-  					// 		{text: '退休', value: '10'},
-  					// 	  	{text: '工人', value: '20'}
-  					// ]
-				},
-				methods:{
-					getJson: function(){
-						$.ajax({})
-					}
-				}
-			})
-			app.getJson();
-		</script>
+		<!-- <script src="http://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script> -->
+		<script src="http://cdn.bootcss.com/axios/0.15.3/axios.min.js"></script>
+		<script type="text/javascript" src="../lib/common.js"></script>
+		<script type="text/javascript" src="js/demo1.js"></script>
 	</body>
 </html>

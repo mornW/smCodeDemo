@@ -2,6 +2,9 @@ body{
 	font-family: "微软雅黑",helvetica;
 	font-size: 14px;
 }
+[v-cloak]{
+    display:none;
+}
 .wrap {
     background-color: #fff;
     margin-top: 10px;
