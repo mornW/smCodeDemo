@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no,email=no" />
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <meta name="304Fix" content="safari-fix">
+    <meta name="fragment" content="!" />
+    <title>会诊列表</title>
+    <!-- <link rel="stylesheet" type="text/css" href="../../css/lib/mobiscroll.custom-3.0.0-beta6.min.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../css/lib/swiper-3.4.1.min.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../css/common.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/list.css">
+</head>
+<body>
+    <div class="wrap dn" id="app" v-cloak>
+        <!-- <div class="nav">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div data="0" class="active swiper-slide">全部</div>
+                    <div data="20" class="swiper-slide">待审核</div>
+                    <div data="30" class="swiper-slide">待会诊</div>
+                    <div data="40" class="swiper-slide">会诊中</div>
+                    <div data="50" class="swiper-slide">报告中</div>
+                    <div data="60" class="swiper-slide">已完成</div>
+                    <div data="10" class="swiper-slide">待修改</div>
+                </div>
+            </div>
+        </div> -->
+        <div id="boxs">
+            <div id="box-scroll">
+                <div class="pullDown">
+                    <div class="loader"><div class="loader-inner ball-clip-rotate"><div></div></div></div>
+                    <div class="re-dname">向下刷新列表</div>
+                </div>
+                <ul id="box-list">
+                    <!-- <li>
+                        <div class="box">
+                            <div class="pat-item item ellipsis oh">
+                                <div class="girl dib va-mid"></div>
+                                <div class="pat dib va-mid">
+                                    <div class="name">aaaaaaaaaaaaaa</div>
+                                    <div class="sex">f</div>
+                                    <div class="age">14y</div>
+                                </div>
+                            </div>
+                            <div class="from-item item">苏州附一院</div>
+                            <div class="to-item item">人民医院</div>
+                            <div class="date-item item">
+                                <span>10:33</span>
+                                <span>2016-12-12</span>
+                            </div>
+                            <div class="st-bar st1">
+                                <div class="st-ic">
+                                    <img src="../../image/consultation/s_box1.png">
+                                    <div class="stc1">会诊中</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li> -->
+                </ul>
+                <div class="pullUp">
+                    <div class="loader dn"><div class="loader-inner ball-clip-rotate"><div></div></div></div>
+                    <div class="re-uname dn">加载更多</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mask dn">
+        <div class="filters-group">
+            <div class="filter">
+                <div class="items">
+                    <div class="items-name dib va-mid">开始日期</div>
+                    <div class="items-val dib va-mid">
+                        <input id="start-date" readonly />
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="items-name dib va-mid">结束日期</div>
+                    <div class="items-val dib va-mid">
+                        <input id="end-date" readonly />
+                    </div>
+                </div>
+                <div class="items-group">
+                    <div class="items">
+                        <div class="items-name dib va-mid">患者姓名</div>
+                        <div class="items-val dib va-mid">
+                            <input type="text" />
+                        </div>
+                    </div>
+                    <div class="items">
+                        <div class="items-name dib va-mid">医生姓名</div>
+                        <div class="items-val dib va-mid select-zi2">
+                            <input type="text" />
+                        </div>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="items-name dib va-mid">医院名称</div>
+                    <div class="items-val dib va-mid">
+                        <div class="diy_select hosps-list">
+                            <div class="select-text ">
+                                <input type="hidden" name="" id="a" class="diy_select_input"/>
+                                <div class="diy_select_txt diy_select_btn"></div>
+                            </div>
+                            <div class="select-option">
+                                <ul class="diy_select_list hosps">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="items-name dib va-mid">科室名称</div>
+                    <div class="items-val dib va-mid">
+                        <div class="diy_select">
+                            <div class="select-text ">
+                                <input type="hidden" name="" id="a" class="diy_select_input"/>
+                                <div class="diy_select_txt diy_select_btn"></div>
+                            </div>
+                            <div class="select-option">
+                                <ul class="diy_select_list depts">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btns">
+                <div class="clean"><img class="yes" src="../../image/consultation/s_clean@2x.png">清空</div>
+                <div class="search"><img src="../../image/consultation/s_search@2x.png">查询</div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../lib/js/vue-1.0.26.js"></script>
+    <script type="text/javascript" src="../lib/js/axios.min.js"></script>
+<!-- <script type="text/javascript" src="../../js/lib/iscroll-probe.js"></script> -->
+<!-- <script type="text/javascript" src="../../js/lib/swiper.jquery.min.js"></script> -->
+<!-- <script type="text/javascript" src="../../js/lib/mobiscroll.custom-3.0.0-beta6.min.js"></script> -->
+<!-- <script type="text/javascript" src="../../js/lib/select.js"></script> -->
+<!-- <script type="text/javascript" src="../../js/common.js"></script> -->
+    <script type="text/javascript" src="js/list.js"></script>
+</body>
+</html>
