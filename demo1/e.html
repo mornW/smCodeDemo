@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/js/vue-1.0.26.js"></script>
+</head>
+<body>
+<div id="app">
+    <button v-on:click="jia">+</button>
+    <p>数量：{{ shuliang }}</p>
+    <p>单价：{{ danjia }}</p>
+    <hr>
+    <p>总价：{{ zongjia }}</p>
+    <button @click="jian">-</button>
+</div>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            shuliang: 0,
+            danjia: 10,
+            zongjia: 0
+        },
+        methods:{//方法
+            jia: function(){ //执行函数
+                this.shuliang ++;
+                this.zongjia = this.shuliang * this.danjia
+            },
+            jian:function(){
+                this.shuliang --;
+               if (this.shuliang < 0){//数量不为0
+                   this.shuliang =0;
+               }else{
+                   this.zongjia = this.shuliang * this.danjia
+               }
+            }
+        },
+    watch:{//监听
+        'shuliang' :function(newval, oldval){ //监听shuliang的改变，回调函数 newval跟oldval 改变之前的跟改变之后的
+        console.log(newval, oldval);
+            if (this.shuliang > 3){
+                this.zongjia = this.zongjia - this.danjia
+            }
+        }
+    }
+    })
+</script>
+</body>
+</html>

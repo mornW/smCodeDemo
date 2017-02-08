@@ -34,10 +34,17 @@
                     <div class="items">
                         <div class="items-name tr">会诊目的</div>
                         <div class="items-val dib va-mid pr a-val">
-                            <select name="purpost" id="purpost">
-                                <option value="-1"></option>
-                                <option value="{{purpost.itemcode}}" v-for="purpost in purpostDict">{{purpost.itemname}}</option>
-                            </select>
+                            <div class="diy_select pp-list dib va-mid pr">
+                                <div class="select-text ">
+                                    <input type="hidden" name="" id="a" class="diy_select_input"/>
+                                    <div class="diy_select_txt diy_select_btn"></div>
+                                </div>
+                                <div class="select-option">
+                                    <ul class="diy_select_list pp">
+                                        <li value="{{purpost.itemcode}}" v-for="purpost in purpostDict" @click="pkVal('purpostDict',purpost)">{{purpost.itemname}}</li>
+                                    </ul>
+                                </div>
+                            </div>
                             <div class="require">*</div>
                         </div>
                     </div>
@@ -45,11 +52,19 @@
                         <div class="items-name tr">会诊选择</div>
                         <div class="items-group-val dib va-top">
                             <div class="items-val">
-                                <select name="phostp" id="phostp">
-                                    <option value="-1">会诊医院</option>
-                                    <option value="{{phostp.id}}" v-for="phostp in parentHostp">{{phostp.orgname}}</option>
-                                </select>
-                                <!-- <div class="dib va-mid">省</div> -->
+                                <div class="diy_select to-hosp-list dib va-mid pr">
+                                    <div class="select-text ">
+                                        <input type="hidden" name="" id="a" class="diy_select_input"/>
+                                        <div class="diy_select_txt diy_select_btn">会诊医院</div>
+                                    </div>
+                                    <div class="select-option">
+                                        <ul class="diy_select_list to-hosp">
+                                            <li v-for="phostp in parentHostp" @click="pkVal('parentHostp',phostp)">{{phostp.orgname}}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="require">*</div>
+                                </div>
+                                <div class="require">*</div>
                             </div>
                             <div class="items-val">
                                 <div class="diy_select to-dept-list dib va-mid pr">
@@ -59,10 +74,10 @@
                                     </div>
                                     <div class="select-option">
                                         <ul class="diy_select_list to-dept">
+                                            <li v-for="dept in depts" @click="pkVal('depts',dept)">{{dept.deptname}}</li>
                                         </ul>
                                     </div>
                                 </div>
-                                <!-- <div class="dib va-mid">市</div> -->
                             </div>
                             <div class="items-val">
                                 <div class="diy_select doc-list dib va-mid">
@@ -72,10 +87,10 @@
                                     </div>
                                     <div class="select-option">
                                         <ul class="diy_select_list doc">
+                                            <li v-for="doctor in doctors" @click="pkVal('doctors',doctor)">{{doctor.username}}</li>
                                         </ul>
                                     </div>
                                 </div>
-                                <!-- <div class="dib va-mid">区</div> -->
                             </div>
                         </div>
                     </div>
@@ -150,6 +165,7 @@
                                     </div>
                                     <div class="select-option">
                                         <ul class="diy_select_list navt">
+                                            <li v-for="nat in nation" @click="pkVal('nation',nat)">{{nat.nationname}}</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -158,34 +174,62 @@
                         <div class="items">
                             <div class="items-name tr">婚姻状态</div>
                             <div class="items-val dib va-mid">
-                                <select name="marr" id="marr">
-                                    <option value="-1"></option>
-                                    <option value="{{marr.itemcode}}" v-for="marr in marrDict">{{marr.itemname}}</option>
-                                </select>
+                                <div class="diy_select marr-list dib va-mid">
+                                    <div class="select-text ">
+                                        <input type="hidden" name="" id="a" class="diy_select_input"/>
+                                        <div class="diy_select_txt diy_select_btn"></div>
+                                    </div>
+                                    <div class="select-option">
+                                        <ul class="diy_select_list marr">
+                                            <li v-for="marr in marrDict" @click="pkVal('marrDict',marr)">{{marr.itemname}}</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="items">
                             <div class="items-name tr">省市区</div>
                             <div class="items-group-val dib va-top">
                                 <div class="items-val">
-                                    <select name="prov" id="prov">
-                                        <option value="-1">--</option>
-                                        <option value="{{prov.areacode}}" v-for="prov in provs">{{prov.areaname}}</option>
-                                    </select>
+                                    <div class="diy_select provs-list dib va-mid">
+                                        <div class="select-text ">
+                                            <input type="hidden" name="" id="a" class="diy_select_input"/>
+                                            <div class="diy_select_txt diy_select_btn"></div>
+                                        </div>
+                                        <div class="select-option">
+                                            <ul class="diy_select_list provs">
+                                                <li v-for="prov in provs" @click="pkVal('provs',prov)">{{prov.areaname}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                     <div class="dib va-mid">省</div>
                                 </div>
                                 <div class="items-val">
-                                    <select name="ct" id="ct">
-                                        <option value="-1">--</option>
-                                        <option value="{{ct.areacode}}" v-for="ct in city">{{ct.areaname}}</option>
-                                    </select>
+                                    <div class="diy_select city-list dib va-mid">
+                                        <div class="select-text ">
+                                            <input type="hidden" name="" id="a" class="diy_select_input"/>
+                                            <div class="diy_select_txt diy_select_btn"></div>
+                                        </div>
+                                        <div class="select-option">
+                                            <ul class="diy_select_list city">
+                                                <li v-for="ct in city" @click="pkVal('city',ct)">{{ct.areaname}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                     <div class="dib va-mid">市</div>
                                 </div>
                                 <div class="items-val">
-                                    <select name="ar" id="ar">
-                                        <option value="-1">--</option>
-                                        <option value="{{ar.areacode}}" v-for="ar in area">{{ar.areaname}}</option>
-                                    </select>
+                                    <div class="diy_select areas-list dib va-mid">
+                                        <div class="select-text ">
+                                            <input type="hidden" name="" id="a" class="diy_select_input"/>
+                                            <div class="diy_select_txt diy_select_btn"></div>
+                                        </div>
+                                        <div class="select-option">
+                                            <ul class="diy_select_list areas">
+                                                <li value="{{ar.areacode}}" v-for="ar in area" @click="pkVal('area',ar)">{{ar.areaname}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                     <div class="dib va-mid">区</div>
                                 </div>
                             </div>
@@ -199,10 +243,17 @@
                         <div class="items">
                             <div class="items-name tr">职业</div>
                             <div class="items-val dib va-mid">
-                                <select name="job" id="job">
-                                    <option value="-1"></option>
-                                    <option value="{{job.itemcode}}" v-for="job in jobsDict">{{job.itemname}}</option>
-                                </select>
+                                <div class="diy_select job-list dib va-mid">
+                                    <div class="select-text ">
+                                        <input type="hidden" name="" id="a" class="diy_select_input"/>
+                                        <div class="diy_select_txt diy_select_btn"></div>
+                                    </div>
+                                    <div class="select-option">
+                                        <ul class="diy_select_list job">
+                                            <li value="{{job.itemcode}}" v-for="job in jobsDict" @click="pkVal('jobsDict',job)">{{job.itemname}}</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="items">
@@ -418,6 +469,7 @@
 <script type="text/javascript" src="../../lib/js/mobiscroll.custom-3.0.0-beta6.min.js"></script>
 <script type="text/javascript" src="../../lib/js/axios.min.js"></script>
 <script type="text/javascript" src="../../lib/common.js"></script>
-<script type="text/javascript" src="js/add.js"></script>
+<script type="text/javascript" src="../../lib/select.js"></script>
+<script type="text/javascript" src="js/add-sel.js"></script>
 </body>
 </html>

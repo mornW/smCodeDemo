@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+    <div id="app">
+      <div class="container">
+        <div class="form-group">
+          <label for="btn-demo">鼠标移入移出效果：</label>
+          <button class="btn"
+                  :class="{'btn-primary': isShow}"
+                  @mouseover="toggleShow()"
+                  @mouseout="toggleShow()"
+                  v-text="btnStyle"></button>
+          <span v-show="isShow"
+                class="label label-success animated"
+                :class="{'fadeIn': isShow}">Do you wannta see me?</span>
+        </div>
+      </div>
+    </div>
+<script type="text/javascript" src="../lib/js/vue-1.0.26.js"></script>
+<script type="text/javascript">
+new Vue({
+  el: "#app",
+  data: {
+    isShow: false,
+    btnStyle: 'Default'
+  },
+  methods: {
+    toggleShow: function() {
+      this.isShow = !this.isShow
+    }
+  },
+  watch: {
+    isShow: function(newVal) {
+      newVal ? this.btnStyle = 'Primary' : this.btnStyle = 'Default'
+    }
+  }
+})
+</script>
+</body>
+</html>

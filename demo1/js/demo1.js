@@ -43,6 +43,7 @@ var app = new Vue({
                         self.pmUser = json;
                         console.log(self.pmUser);
                     }).catch(function (error) {});
-        }
+        },
+        hell: function(){}
     }
 })
