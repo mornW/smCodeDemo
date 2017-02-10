@@ -927,10 +927,10 @@ input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-sea
     left: 0;
 }
 .mbsc-ic-arrow-left5:before {
-    background: url('../img/referral/left-arrow.png') no-repeat center;
+    background: url('../../image/referral/left-arrow.png') no-repeat center;
 }
 .mbsc-ic-arrow-right5:before {
-    background: url('../img/referral/right-arrow.png') no-repeat center;
+    background: url('../../image/referral/right-arrow.png') no-repeat center;
 }
 .mbsc-mobiscroll .mbsc-sc-whl-l {
     border-top: 1px solid #32bbdc;

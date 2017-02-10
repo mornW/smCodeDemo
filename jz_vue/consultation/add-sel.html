@@ -21,7 +21,7 @@
 </head>
 <body>
     <div class="wrap" id="app">
-    <!-- {{$data.jobsDict|json}} -->
+        <!-- {{$data.jobsDict|json}} -->
         <div class="content">
             <div class="step">
                 <div class="item-header">
@@ -64,7 +64,6 @@
                                     </div>
                                     <div class="require">*</div>
                                 </div>
-                                <div class="require">*</div>
                             </div>
                             <div class="items-val">
                                 <div class="diy_select to-dept-list dib va-mid pr">
@@ -116,7 +115,7 @@
                         <div class="items-val dib va-mid pr">
                             <input type="text" v-model="addOrder.username" lazy/>
                             <div class="require">*</div>
-                            <img src="../../image/consultation/s_pat@2x.png" class="pat-more" id="pick-pat">
+                            <img src="../../image/consultation/s_pat@2x.png" class="pat-more" @click="getPatients">
                         </div>
                     </div>
                     <div class="items">
@@ -129,8 +128,8 @@
                                 </div>
                                 <div class="select-option">
                                     <ul class="diy_select_list sex">
-                                        <li data-value="0">男</li>
-                                        <li data-value="1">女</li>
+                                        <li @click="pkGender(0)">男</li>
+                                        <li @click="pkGender(1)">女</li>
                                     </ul>
                                 </div>
                             </div>
@@ -140,17 +139,17 @@
                     <div class="items">
                         <div class="items-name tr">年龄</div>
                         <div class="items-val dib va-mid pr">
-                            <input type="number" v-model="addOrder.age" lazy/>
+                            <input type="number" v-model="addOrder.age" v-on:keyup="setBirth"/>
                             <div class="require">*</div>
                         </div>
                     </div>
                     <div class="items pr">
                         <div class="items-name tr">出生日期</div>
                         <div class="items-val dib va-mid pr">
-                            <input id="birth" readonly v-model="addOrder.birth" lazy/>
+                            <input id="birth" readonly v-model="addOrder.dateofbirth" @click="pkBirth"/>
                             <div class="require">*</div>
                         </div>
-                        <div class="more-div" v-on:click="userShow()">
+                        <div class="more-div" v-on:click="userShow()" v-bind:class="{'less':moreUserInfo}">
                             <div class="more"></div>
                         </div>
                     </div>
@@ -237,7 +236,7 @@
                         <div class="items">
                             <div class="items-name tr">住址</div>
                             <div class="items-val dib va-mid">
-                                <input type="text" />
+                                <input type="text" v-model="addOrder.address" lazy/>
                             </div>
                         </div>
                         <div class="items">
@@ -259,7 +258,7 @@
                         <div class="items">
                             <div class="items-name tr">工作单位</div>
                             <div class="items-val dib va-mid">
-                                <input type="text" />
+                                <input type="text" v-model="addOrder.commpany" lazy/>
                             </div>
                         </div>
                     </div>
@@ -277,35 +276,29 @@
                     <div class="items">
                         <div class="items-name tr va-top">初步诊断</div>
                         <div class="items-val dib va-top ps-val first pr">
-                            <textarea class="txt normal-txt"></textarea>
+                            <textarea class="txt normal-txt" v-model="addOrder.clinicaldiagnosis" lazy></textarea>
                             <div class="require">*</div>
                         </div>
                     </div>
                     <div class="items">
                         <div class="items-name tr va-top ar-1">病历信息</div>
                         <div class="items-val ps-val dib va-top others pr">
-                            <textarea class="txt"></textarea>
+                            <textarea class="txt" v-model="" lazy></textarea>
                             <div class="ps-files">
                                 <ul class="ar-1">
-                                    <!-- <li>
-                                        <div class="file-img"></div>
+                                    <li v-for="up in upLoads" data-href="up.ImagePath">
+                                        <div v-bind:class="{'file-img': fileType.image, 'file-video': fileType.video, 'file-file': fileType.file}">{{up.description}}<span class="del">删除</span></div>
                                     </li>
-                                    <li>
-                                        <div class="file-video"></div>
-                                    </li>
-                                    <li>
-                                        <div class="file-file"></div>
-                                    </li> -->
                                 </ul>
                             </div>
                             <div class="pa add-files">
-                                <div class="add-menu"></div>
-                                <div class="add-close"></div>
+                                <div class="add-menu" @click="showUpload(1)" v-if="!menuBtn.item1" v-cloak></div>
+                                <div class="add-close" @click="closeUpload(1)" v-else="menuBtn.item1" v-cloak></div>
                             </div>
-                            <ul class="pa up-menus">
-                                <li><div class="up-file"></div></li>
-                                <li><div class="up-img"></div></li>
-                                <li><div class="up-video"></div></li>
+                            <ul class="pa up-menus" v-show="menuBtn.item1" v-cloak>
+                                <li><div class="up-file" @click="upFile(upLoads)"></div></li>
+                                <li><div class="up-img" @click="upImg(upLoads)"></div></li>
+                                <li><div class="up-video" @click="upVideo(upLoads)"></div></li>
                             </ul>
                         </div>
                     </div>
@@ -315,28 +308,22 @@
                             <textarea class="txt"></textarea>
                             <div class="ps-files">
                                 <ul class="ar-2">
-                                    <!-- <li>
-                                        <div class="file-img"></div>
+                                    <li v-for="up in upLoads2" data-href="up.ImagePath">
+                                        <div v-bind:class="{'file-img': fileType.image, 'file-video': fileType.video, 'file-file': fileType.file}">{{up.description}}<span class="del">删除</span></div>
                                     </li>
-                                    <li>
-                                        <div class="file-video"></div>
-                                    </li>
-                                    <li>
-                                        <div class="file-file"></div>
-                                    </li> -->
                                 </ul>
                             </div>
                             <div class="pa add-files">
-                                <div class="add-menu"></div>
-                                <div class="add-close"></div>
+                                <div class="add-menu" @click="showUpload(2)" v-if="!menuBtn.item2" v-cloak></div>
+                                <div class="add-close" @click="closeUpload(2)" v-else="menuBtn.item2"  v-cloak></div>
                             </div>
-                            <ul class="pa up-menus">
-                                <li><div class="up-file"></div></li>
-                                <li><div class="up-img"></div></li>
-                                <li><div class="up-video"></div></li>
+                            <ul class="pa up-menus" v-show="menuBtn.item2" v-cloak>
+                                <li><div class="up-file" @click="upFile(upLoads2)"></div></li>
+                                <li><div class="up-img" @click="upImg(upLoads2)"></div></li>
+                                <li><div class="up-video" @click="upVideo(upLoads2)"></div></li>
                             </ul>
                         </div>
-                        <div class="more-div" v-on:click="detailShow()">
+                        <div class="more-div" v-on:click="detailShow()" v-bind:class="{'less':moreDetail}">
                             <div class="more"></div>
                         </div>
                     </div>
@@ -359,10 +346,10 @@
                                     </ul>
                                 </div>
                                 <div class="pa add-files">
-                                    <div class="add-menu"></div>
-                                    <div class="add-close"></div>
+                                    <div class="add-menu" @click="showUpload(3)" v-if="!menuBtn.item3" v-cloak></div>
+                                    <div class="add-close" @click="closeUpload(3)" v-if="menuBtn.item3" v-cloak></div>
                                 </div>
-                                <ul class="pa up-menus">
+                                <ul class="pa up-menus" v-show="menuBtn.item3" v-cloak>
                                     <li><div class="up-file"></div></li>
                                     <li><div class="up-img"></div></li>
                                     <li><div class="up-video"></div></li>
@@ -387,10 +374,10 @@
                                     </ul>
                                 </div>
                                 <div class="pa add-files">
-                                    <div class="add-menu"></div>
-                                    <div class="add-close"></div>
+                                    <div class="add-menu" @click="showUpload(4)" v-if="!menuBtn.item4" v-cloak></div>
+                                    <div class="add-close" @click="closeUpload(4)" v-if="menuBtn.item4" v-cloak></div>
                                 </div>
-                                <ul class="pa up-menus">
+                                <ul class="pa up-menus" v-show="menuBtn.item4" v-cloak>
                                     <li><div class="up-file"></div></li>
                                     <li><div class="up-img"></div></li>
                                     <li><div class="up-video"></div></li>
@@ -415,10 +402,10 @@
                                     </ul>
                                 </div>
                                 <div class="pa add-files">
-                                    <div class="add-menu"></div>
-                                    <div class="add-close"></div>
+                                    <div class="add-menu" @click="showUpload(5)" v-if="!menuBtn.item5" v-cloak></div>
+                                    <div class="add-close" @click="closeUpload(5)" v-if="menuBtn.item5" v-cloak></div>
                                 </div>
-                                <ul class="pa up-menus">
+                                <ul class="pa up-menus" v-show="menuBtn.item5" v-cloak>
                                     <li><div class="up-file"></div></li>
                                     <li><div class="up-img"></div></li>
                                     <li><div class="up-video"></div></li>
@@ -433,41 +420,45 @@
             <div class="submit-btn" id="show-modal" @click="submitOrder()"><img src="../../image/consultation/s_save@2x.png">保存提交</div>
             <div class="cancel-btn"><img src="../../image/consultation/cancel@2x.png">取消保存</div>
         </div>
-    </div>
-    <div class="mask dn">
-        <div class="tip dn">提交失败!</div>
-        <div class="errors dn">
-            <div class="errors-header">错误提示</div>
-            <ul id="error-tip"></ul>
-            <div class="close">确定</div>
-        </div>
-        <div class="pat-box dn">
-            <div class="box-header">患者</div>
-            <div class="box-content">
-                <ul id="dept-list">
-                    <!-- <li>
-                        <label>
-                            <div class="radios-bg"></div>
-                            <input type="radio" hidden="hidden" data-value="0">
-                            <div class="dib">01(
-                                <span>张三是,</span>
-                                <span>男</span>)
-                            </div>
-                        </label>
-                    </li> -->
-                </ul>
+        <div class="mask" v-show="mask" v-cloak>
+            <div v-if="ymodules == 1" class="tip">提交失败!</div>
+            <div v-else="ymodules == 2" class="errors">
+                <div class="errors-header">错误提示</div>
+                <ul id="error-tip"></ul>
+                <div class="close">确定</div>
             </div>
-            <div class="box-footer">
-                <div class="submit2"><img class="yes" src="../../image/referral/s_finish@2x.png">确定</div>
-                <div class="cancel2"><img src="../../image/referral/s_cancel@2x.png">取消</div>
+            <div v-else="ymodules == 3" class="pat-box">
+                <div class="box-header">患者</div>
+                <div class="box-content">
+                    <ul id="dept-list">
+                        <li v-for="pat in patients" @click="pkVal('patients',pat)">
+                            <label>
+                                <div class="radios-bg" v-bind:class="{'radios-bg-selected': pkRadio}"></div>
+                                <input type="radio" hidden="hidden">
+                                <div class="dib">{{pat.bedid}}(
+                                    <span>{{pat.bedname}},</span>
+                                    <span v-if="pat.gender == '0'">男</span>
+                                    <span v-else>女</span>)
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-footer">
+                    <div class="submit2" @click="closeMask(1)"><img class="yes" src="../../image/referral/s_finish@2x.png">确定</div>
+                    <div class="cancel2" @click="closeMask(0)"><img src="../../image/referral/s_cancel@2x.png">取消</div>
+                </div>
             </div>
         </div>
     </div>
 
-<script type="text/javascript" src="../../lib/js/vue-1.0.26.js"></script>
+<script type="text/javascript" src="../../lib/js/vue-1.0.28.js"></script>
+<!-- <script type="text/javascript" src="../../lib/js/vue-2.1.10.js"></script> -->
 <script type="text/javascript" src="../../lib/zepto.min.js"></script>
+<script type="text/javascript" src="../../lib/fastclick.min.js"></script>
 <script type="text/javascript" src="../../lib/js/mobiscroll.custom-3.0.0-beta6.min.js"></script>
 <script type="text/javascript" src="../../lib/js/axios.min.js"></script>
+<!-- <script type="text/javascript" src="../../lib/js/YXBridge.js"></script> -->
 <script type="text/javascript" src="../../lib/common.js"></script>
 <script type="text/javascript" src="../../lib/select.js"></script>
 <script type="text/javascript" src="js/add-sel.js"></script>

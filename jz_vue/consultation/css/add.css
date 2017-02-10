@@ -296,13 +296,13 @@
     height: 44px;
     position: relative;
     z-index: 10;
-    display: none;
+    /*display: none;*/
 }
 .up-menus {
     width: 93px;
     right: 0px;
     bottom: -3px;
-    display: none;
+    /*display: none;*/
 }
 .up-menus li:nth-child(1){
     margin-left: 45px;
