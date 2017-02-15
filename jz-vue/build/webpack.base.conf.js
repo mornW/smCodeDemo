@@ -18,6 +18,10 @@ module.exports = {
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
   },
+  externals: {
+    'zepto': 'Zepto'
+    // 'wx': 'jWeixin'
+  },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     modules: [

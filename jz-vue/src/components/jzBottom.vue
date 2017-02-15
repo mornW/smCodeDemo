@@ -27,6 +27,7 @@
         bottom: 0;
         left: 0;
         right: 0;
+        z-index: 7000;
         background-color: #35bcdc;
         color: #fff;
         font-size: 0.1rem;
