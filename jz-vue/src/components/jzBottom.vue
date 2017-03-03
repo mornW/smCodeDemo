@@ -3,21 +3,23 @@
         <div class="f_inner">
             <ul>
                 <li>
-                    <router-link to="/one">one</router-link>
+                    <router-link to="/one">登录</router-link>
                 </li>
                 <li>
-                    <router-link to="/two">two</router-link>
+                    <router-link to="/two">退出</router-link>
                 </li>
                 <li>
-                    <router-link to="/three">three</router-link>
+                    <router-link to="/three">后台</router-link>
                 </li>
                 <li>
-                    <router-link to="/four">four</router-link>
+                    <router-link to="/four">空</router-link>
                 </li>
             </ul>
         </div>
     </div>
 </template>
+
+<script type="text/javascript"></script>
 
 <style>
     .footer {

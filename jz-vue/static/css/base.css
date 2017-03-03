@@ -1,0 +1,120 @@
+#morn {height: 100%;}
+
+a,body {
+    color: #666
+}
+
+input,textarea {
+    resize: none
+}
+
+img,input,textarea {
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent
+}
+
+a,button,img,input {
+    -webkit-tap-highlight-color: transparent
+}
+
+.tc {
+    text-align: center
+}
+
+body,button,input,select,textarea {
+    font-family: 'Microsoft Yahei',Helvetica,Tahoma,Arial
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+a,button {
+    cursor: pointer
+}
+
+a {
+    text-decoration: none
+}
+
+body,button,caption,dd,div,dl,dt,form,h1,h2,h3,h4,h5,h6,hr,html,input,li,ol,p,pre,table,td,textarea,th,ul {
+    margin: 0;
+    padding: 0;
+    -webkit-padding-start: 0;
+}
+
+article,aside,footer,header,nav,section {
+    display: block
+}
+
+em,i {
+    font-style: normal
+}
+
+li {
+    list-style: none
+}
+
+/*浏览器最小字体不限制 旧*/
+html{-webkit-text-size-adjust: none;}
+
+body,html {
+    width: 100%;
+    height: 100%;
+    line-height: normal;
+    background-color: #f5f5f5
+}
+
+body {
+    /*max-width: 750px;*/
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.4;
+    -webkit-overflow-scrolling: touch
+}
+
+.ellipsis,.oh {
+    overflow: hidden
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 0;
+    vertical-align: middle
+}
+input {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-image: none;
+}
+input:focus {
+    outline: 0
+}
+
+input:focus::-webkit-input-placeholder {
+    color: transparent
+}
+
+input[type=search] {
+    -webkit-appearance: textfield
+}
+
+input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration,input[type=search]::-webkit-search-results-button,input[type=search]::-webkit-search-results-decoration {
+    display: none
+}
+
+:after,:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+::-webkit-input-placeholder {
+    color: #999;
+    font-family: 'Microsoft Yahei',Helvetica,Tahoma,Arial
+}
+
+.clearfix,.db {
+    display: block
+}

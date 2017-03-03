@@ -1,13 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import routes from './routers'; // 引入路由配置
-import homePage from './components/main.vue'
+import routes from './routers'; // 引入路由配置
 import axios from 'axios'
 // import infiniteScroll from 'vue-infinite-scroll';  // 引入滑动模块
 import fastclick from 'fastclick'
+import Vuex from 'vuex'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
+import '../static/css/base.css'
 // import Scroller from 'vue-scroller'
 // 注册组件
-Vue.use(VueRouter)
+Vue.use(ElementUI,VueRouter,Vuex)
 // Vue.use(infiniteScroll);
 fastclick.attach(document.body)
 
@@ -33,48 +36,9 @@ function YXReady(callback) {
     }
 }
 
-const routes = [
-    { path: '/', redirect: '/home' },
-    {
-        path: '/home',
-        component: homePage,
-        children: [
-            {
-                path: '/',
-                component: function(resolve){require(['./components/modeList.vue'], resolve)}
-            },
-            {
-                path: 'consultation',
-                component: function(resolve){require(['./module/consultation/consultation.vue'], resolve)},
-                children: [
-                    {
-                        path: '/',
-                        component: function(resolve){require(['./module/consultation/modeList.vue'], resolve)}
-                    },
-                    {
-                        path: '1',
-                        component: function(resolve){require(['./module/consultation/add.vue'], resolve)}
-                    },
-                    {
-                        path: '2',
-                        component: function(resolve){require(['./module/consultation/list.vue'], resolve)}
-                    },
-                    {
-                        path: '3',
-                        component: function(resolve){require(['./module/consultation/user-info.vue'], resolve)}
-                    },
-                    {
-                        path: '4',
-                        component: function(resolve){require(['./module/consultation/circulation'], resolve)}
-                    }
-                ]
-            }
-        ]
-    }
-]
-
 // 创建路由实例
 const router = new VueRouter({
+    mode: 'hash', // 设置路由模式 可选值: "hash" | "history" | "abstract"，默认"hash"
     routes
 })
 
@@ -87,7 +51,7 @@ new Vue({
           console.log(to);
           console.log(from);
       }
-    }
+  }
   // template: '<App/>',
   // components: { App }
 })

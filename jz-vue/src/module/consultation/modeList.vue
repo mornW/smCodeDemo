@@ -2,16 +2,16 @@
     <div class="con-modes">
         <ul>
             <li>
-                <router-link to="/home/consultation/1">添加</router-link>
+                <router-link to="/phone/consultation/1">添加</router-link>
             </li>
             <li>
-                <router-link to="/home/consultation/2">列表</router-link>
+                <router-link to="/phone/consultation/2">列表</router-link>
             </li>
             <li>
-                <router-link to="/home/consultation/3">用户信息</router-link>
+                <router-link to="/phone/consultation/3">用户信息</router-link>
             </li>
             <li>
-                <router-link to="/home/consultation/4">流转进度</router-link>
+                <router-link to="/phone/consultation/4">流转进度</router-link>
             </li>
         </ul>
     </div>

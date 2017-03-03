@@ -2,7 +2,7 @@
     <div class="main-modes">
         <ul>
             <li>
-                <router-link to="/home/consultation">会诊</router-link>
+                <router-link to="/phone/consultation">会诊</router-link>
             </li>
             <li>
                 <router-link to="">转诊</router-link>

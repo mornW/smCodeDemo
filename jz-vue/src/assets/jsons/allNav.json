@@ -1,0 +1,432 @@
+[
+    {
+        "id": "3028",
+        "appcode": "web",
+        "percode": "permission/#",
+        "pername": "系统管理",
+        "serialno": "0",
+        "description": "系统管理",
+        "pid": "0",
+        "ismenu": "1"
+    },
+    {
+        "id": "1",
+        "appcode": "web",
+        "percode": "/institution/list-1-10",
+        "pername": "机构管理",
+        "serialno": "0",
+        "description": "机构管理",
+        "pid": "3032",
+        "ismenu": "1"
+    },
+    {
+        "id": "4",
+        "appcode": "web",
+        "percode": "/doctor/list-1-10",
+        "pername": "医生管理",
+        "serialno": "1",
+        "description": "医生管理",
+        "pid": "3032",
+        "ismenu": "1"
+    },
+    {
+        "id": "6",
+        "appcode": "web",
+        "percode": "/reapply/list-1-10",
+        "pername": "重做申请管理",
+        "serialno": "1",
+        "description": "重做申请管理",
+        "pid": "3033",
+        "ismenu": "1"
+    },
+    {
+        "id": "2012",
+        "appcode": "web",
+        "percode": "/repertory/list-1-10",
+        "pername": "仓库管理",
+        "serialno": "1",
+        "description": "仓库管理",
+        "pid": "3031",
+        "ismenu": "1"
+    },
+    {
+        "id": "3030",
+        "appcode": "web",
+        "percode": "permission/#",
+        "pername": "基础管理",
+        "serialno": "1",
+        "description": "基础管理",
+        "pid": "0",
+        "ismenu": "1"
+    },
+    {
+        "id": "2",
+        "appcode": "web",
+        "percode": "/permission/list-1-10",
+        "pername": "权限管理",
+        "serialno": "1",
+        "description": "权限管理",
+        "pid": "3028",
+        "ismenu": "1"
+    },
+    {
+        "id": "2007",
+        "appcode": "web",
+        "percode": "/staticreportmanage/list-1-10",
+        "pername": "静态报告管理",
+        "serialno": "2",
+        "description": "静态报告分发转交处理",
+        "pid": "3033",
+        "ismenu": "1"
+    },
+    {
+        "id": "3",
+        "appcode": "web",
+        "percode": "/role/list-1-10",
+        "pername": "群组管理",
+        "serialno": "2",
+        "description": "群组管理",
+        "pid": "3028",
+        "ismenu": "1"
+    },
+    {
+        "id": "3035",
+        "appcode": "web",
+        "percode": "/examinedict/list-1-10",
+        "pername": "诊断词条管理",
+        "serialno": "2",
+        "description": "诊断词条管理",
+        "pid": "3030",
+        "ismenu": "1"
+    },
+    {
+        "id": "3032",
+        "appcode": "web",
+        "percode": "permission/#",
+        "pername": "机构及用户管理",
+        "serialno": "2",
+        "description": "机构及用户管理",
+        "pid": "0",
+        "ismenu": "1"
+    },
+    {
+        "id": "2011",
+        "appcode": "web",
+        "percode": "/supervisor/list-1-10",
+        "pername": "仓库管理员管理",
+        "serialno": "2",
+        "description": "仓库管理员管理",
+        "pid": "3031",
+        "ismenu": "1"
+    },
+    {
+        "id": "3056",
+        "appcode": "web",
+        "percode": "/bpmprocess/list-1-10",
+        "pername": "转诊流程管理",
+        "serialno": "2",
+        "description": "转诊流程管理",
+        "pid": "3032",
+        "ismenu": "1"
+    },
+    {
+        "id": "11",
+        "appcode": "web",
+        "percode": "/analyst/list-1-10",
+        "pername": "分析员管理",
+        "serialno": "2",
+        "description": "分析员管理",
+        "pid": "3032",
+        "ismenu": "1"
+    },
+    {
+        "id": "2013",
+        "appcode": "web",
+        "percode": "/production/list-1-10",
+        "pername": "静态设备管理",
+        "serialno": "3",
+        "description": "静态设备管理",
+        "pid": "3031",
+        "ismenu": "1"
+    },
+    {
+        "id": "2001",
+        "appcode": "web",
+        "percode": "/tutorstudent/list-1-10 ",
+        "pername": "导师管理",
+        "serialno": "3",
+        "description": "导师管理",
+        "pid": "3032",
+        "ismenu": "1"
+    },
+    {
+        "id": "3033",
+        "appcode": "web",
+        "percode": "permission/#",
+        "pername": "报告管理",
+        "serialno": "3",
+        "description": "报告管理",
+        "pid": "0",
+        "ismenu": "1"
+    },
+    {
+        "id": "15",
+        "appcode": "web",
+        "percode": "/staticreport/list",
+        "pername": "静态心电明细查询",
+        "serialno": "3",
+        "description": "静态心电明细查询",
+        "pid": "3033",
+        "ismenu": "1"
+    },
+    {
+        "id": "3031",
+        "appcode": "web",
+        "percode": "permission/#",
+        "pername": "仓库管理",
+        "serialno": "4",
+        "description": "仓库管理",
+        "pid": "0",
+        "ismenu": "1"
+    },
+    {
+        "id": "8",
+        "appcode": "web",
+        "percode": "/devtype/list-1-10",
+        "pername": "动态设备类型管理",
+        "serialno": "4",
+        "description": "动态设备类型管理",
+        "pid": "3031",
+        "ismenu": "1"
+    },
+    {
+        "id": "2023",
+        "appcode": "web",
+        "percode": "/staticreport/timecostlist-1-15",
+        "pername": "静态报告耗时查询",
+        "serialno": "4",
+        "description": "静态报告耗时查询",
+        "pid": "3033",
+        "ismenu": "1"
+    },
+    {
+        "id": "5",
+        "appcode": "web",
+        "percode": "/dict/list-1-10",
+        "pername": "字典管理",
+        "serialno": "4",
+        "description": "字典管理",
+        "pid": "3030",
+        "ismenu": "1"
+    },
+    {
+        "id": "2002",
+        "appcode": "web",
+        "percode": "/usergroup/list-1-10",
+        "pername": "用户迁移管理",
+        "serialno": "4",
+        "description": "用户迁移管理。",
+        "pid": "3032",
+        "ismenu": "1"
+    },
+    {
+        "id": "9",
+        "appcode": "web",
+        "percode": "/devinfo/list-1-10",
+        "pername": "动态设备管理",
+        "serialno": "4",
+        "description": "动态设备管理",
+        "pid": "3031",
+        "ismenu": "1"
+    },
+    {
+        "id": "3037",
+        "appcode": "web",
+        "percode": "/creditcategory/list-1-10",
+        "pername": "积分配置管理",
+        "serialno": "5",
+        "description": "积分配置管理",
+        "pid": "3030",
+        "ismenu": "1"
+    },
+    {
+        "id": "2015",
+        "appcode": "web",
+        "percode": "/record/addui",
+        "pername": "添加入库",
+        "serialno": "5",
+        "description": "添加入库",
+        "pid": "3031",
+        "ismenu": "1"
+    },
+    {
+        "id": "2014",
+        "appcode": "web",
+        "percode": "/supplier/list-1-10",
+        "pername": "供应商管理",
+        "serialno": "5",
+        "description": "供应商管理",
+        "pid": "3031",
+        "ismenu": "1"
+    },
+    {
+        "id": "3038",
+        "appcode": "web",
+        "percode": "/staticreport/dataanalysis",
+        "pername": "报告数据统计",
+        "serialno": "6",
+        "description": "报告数据统计",
+        "pid": "3033",
+        "ismenu": "1"
+    },
+    {
+        "id": "7",
+        "appcode": "web",
+        "percode": "/appversion/list-1-10",
+        "pername": "版本管理",
+        "serialno": "6",
+        "description": "版本管理",
+        "pid": "3028",
+        "ismenu": "1"
+    },
+    {
+        "id": "2016",
+        "appcode": "web",
+        "percode": "/record/transferui",
+        "pername": "仓库调拨",
+        "serialno": "6",
+        "description": "仓库调拨",
+        "pid": "3031",
+        "ismenu": "1"
+    },
+    {
+        "id": "3049",
+        "appcode": "web",
+        "percode": "/reportcheckmanage/list",
+        "pername": "稽查统计",
+        "serialno": "7",
+        "description": "稽查统计",
+        "pid": "3033",
+        "ismenu": "1"
+    },
+    {
+        "id": "2017",
+        "appcode": "web",
+        "percode": "/record/addlist-1-10",
+        "pername": "入库明细",
+        "serialno": "7",
+        "description": "入库明细",
+        "pid": "3031",
+        "ismenu": "1"
+    },
+    {
+        "id": "3034",
+        "appcode": "web",
+        "percode": "/dyreport/list-1-100",
+        "pername": "动态报告查询",
+        "serialno": "7",
+        "description": "动态报告查询",
+        "pid": "3033",
+        "ismenu": "1"
+    },
+    {
+        "id": "3039",
+        "appcode": "web",
+        "percode": "/agent/list-1-10",
+        "pername": "运营商管理",
+        "serialno": "8",
+        "description": "运营商管理",
+        "pid": "3028",
+        "ismenu": "1"
+    },
+    {
+        "id": "3040",
+        "appcode": "web",
+        "percode": "/dyrtreportmanage/list-1-10 ",
+        "pername": "实时报告管理",
+        "serialno": "8",
+        "description": "实时报告管理",
+        "pid": "3033",
+        "ismenu": "1"
+    },
+    {
+        "id": "2018",
+        "appcode": "web",
+        "percode": "/record/transferlist-1-10",
+        "pername": "调拨明细",
+        "serialno": "8",
+        "description": "调拨明细",
+        "pid": "3031",
+        "ismenu": "1"
+    },
+    {
+        "id": "10",
+        "appcode": "web",
+        "percode": "/admin/list-1-10",
+        "pername": "管理员管理",
+        "serialno": "9",
+        "description": "管理员管理",
+        "pid": "3028",
+        "ismenu": "1"
+    },
+    {
+        "id": "2019",
+        "appcode": "web",
+        "percode": "/record/shownum-1-10",
+        "pername": "商品库存",
+        "serialno": "9",
+        "description": "商品库存",
+        "pid": "3031",
+        "ismenu": "1"
+    },
+    {
+        "id": "12",
+        "appcode": "web",
+        "percode": "/vendor/list-1-10",
+        "pername": "销售机构管理",
+        "serialno": "9",
+        "description": "销售机构管理",
+        "pid": "3032",
+        "ismenu": "1"
+    },
+    {
+        "id": "13",
+        "appcode": "web",
+        "percode": "/saler/list-1-10",
+        "pername": "销售人员管理",
+        "serialno": "10",
+        "description": "销售人员管理",
+        "pid": "3032",
+        "ismenu": "1"
+    },
+    {
+        "id": "3051",
+        "appcode": "web",
+        "percode": "/imversion/list-1-10",
+        "pername": "医聊插件管理",
+        "serialno": "10",
+        "description": "医聊插件管理",
+        "pid": "3028",
+        "ismenu": "1"
+    },
+    {
+        "id": "2020",
+        "appcode": "web",
+        "percode": "/record/detail",
+        "pername": "流水查询",
+        "serialno": "10",
+        "description": "流水查询",
+        "pid": "3031",
+        "ismenu": "1"
+    },
+    {
+        "id": "3054",
+        "appcode": "web",
+        "percode": "/imapplicationsversion/list-1-10",
+        "pername": "医聊插件管理2",
+        "serialno": "11",
+        "description": "医聊插件管理2",
+        "pid": "3028",
+        "ismenu": "1"
+    }
+]
